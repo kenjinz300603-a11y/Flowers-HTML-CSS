@@ -6,13 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <title>flowers</title>
+    <title>Flowers of Forgiveness</title>
 </head>
 <body class="container">
-  <!-- Pembuat code: https://codepen.io/mdusmanansari/pen/BamepLe -->
+  <!-- Enhanced with forgiveness theme and interactions -->
+  
     <div class="night"></div>
-    <div class="flowers">
-      <div class="flower flower--1">
+    
+    <!-- Forgiveness Message Display -->
+    <div class="forgiveness-container">
+      <div class="message-box">
+        <h1>🌸 Flowers of Forgiveness 🌸</h1>
+        <p class="subtitle">Click the flowers to bloom your message of forgiveness</p>
+        <div class="messages" id="messagesDisplay"></div>
+      </div>
+    </div>
+
+    <!-- Input for forgiveness messages -->
+    <div class="input-container">
+      <input type="text" id="forgiveInput" placeholder="Write a message of forgiveness..." maxlength="100">
+      <button id="addMessageBtn" aria-label="Add forgiveness message">Send</button>
+    </div>
+
+    <div class="flowers" id="flowersContainer">
+      <div class="flower flower--1" data-flower="1">
         <div class="flower__leafs flower__leafs--1">
           <div class="flower__leaf flower__leaf--1"></div>
           <div class="flower__leaf flower__leaf--2"></div>
@@ -28,7 +45,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -40,7 +56,7 @@
         </div>
       </div>
   
-      <div class="flower flower--2">
+      <div class="flower flower--2" data-flower="2">
         <div class="flower__leafs flower__leafs--2">
           <div class="flower__leaf flower__leaf--1"></div>
           <div class="flower__leaf flower__leaf--2"></div>
@@ -56,7 +72,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -66,7 +81,7 @@
         </div>
       </div>
   
-      <div class="flower flower--3">
+      <div class="flower flower--3" data-flower="3">
         <div class="flower__leafs flower__leafs--3">
           <div class="flower__leaf flower__leaf--1"></div>
           <div class="flower__leaf flower__leaf--2"></div>
@@ -82,7 +97,6 @@
           <div class="flower__light flower__light--6"></div>
           <div class="flower__light flower__light--7"></div>
           <div class="flower__light flower__light--8"></div>
-  
         </div>
         <div class="flower__line">
           <div class="flower__line__leaf flower__line__leaf--1"></div>
@@ -188,125 +202,65 @@
       </div>
   
       <div class="long-g long-g--0">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:2.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:2.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:3.4s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--1">
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.8s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:3.8s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:4s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--2">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--3">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--4">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--5">
-        <div class="grow-ans" style="--d:4s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:4s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:3s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--6">
-        <div class="grow-ans" style="--d:4.2s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.4s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.6s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:4.8s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:4.2s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:4.4s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:4.6s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:4.8s"><div class="leaf leaf--3"></div></div>
       </div>
   
       <div class="long-g long-g--7">
-        <div class="grow-ans" style="--d:3s">
-          <div class="leaf leaf--0"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.2s">
-          <div class="leaf leaf--1"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.5s">
-          <div class="leaf leaf--2"></div>
-        </div>
-        <div class="grow-ans" style="--d:3.6s">
-          <div class="leaf leaf--3"></div>
-        </div>
+        <div class="grow-ans" style="--d:3s"><div class="leaf leaf--0"></div></div>
+        <div class="grow-ans" style="--d:3.2s"><div class="leaf leaf--1"></div></div>
+        <div class="grow-ans" style="--d:3.5s"><div class="leaf leaf--2"></div></div>
+        <div class="grow-ans" style="--d:3.6s"><div class="leaf leaf--3"></div></div>
       </div>
     </div>
+
+    <!-- Particle effect container -->
+    <div id="particleContainer"></div>
+
     <script src="main.js"></script>
-  </body>
+</body>
 </html>
